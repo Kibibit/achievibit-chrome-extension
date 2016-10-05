@@ -37,7 +37,7 @@ if (isUserProfile && getParent && getParent.length > 0) {
 		if (resp && resp.achievements) {
 			for (var i = 0; i < resp.achievements.length; i++) {
 				achievibit.append([
-					'<a target="_blank" href="', server, getUrlParams, '" aria-label="' + resp.achievements[i].short + '" class="tooltipped tooltipped-n avatar-group-item" itemprop="follows">',
+					'<a target="_blank" href="', server, username, '" aria-label="' + resp.achievements[i].short + '" class="tooltipped tooltipped-n avatar-group-item" itemprop="follows">',
 						'<img alt="Start using achievements" class="avatar" height="35" src="' + resp.achievements[i].avatar + '" width="35">',
 						'<span style="margin-left: 5px">' + resp.achievements[i].name + '</span>',
 					'</a>'
