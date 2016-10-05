@@ -17,9 +17,11 @@ var isUserProfile = getUrlParams !== '' && getUrlParams.split('/').length === 1;
 
 var getParent = $( "[itemtype='http://schema.org/Person']" );
 
+var username = getParent.find("[itemprop='additionalName']").text() || getUrlParams;
+
 if (isUserProfile && getParent && getParent.length > 0) {
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET", server + "raw/" + getUrlParams, true);
+	xhr.open("GET", server + "raw/" + username, true);
 	xhr.onreadystatechange = function() {
 	  if (xhr.readyState == 4) {
 	    // JSON.parse does not evaluate the attacker's scripts.
