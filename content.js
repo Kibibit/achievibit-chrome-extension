@@ -1,5 +1,5 @@
 var currentLoggedInUser = $('#user-links img.avatar').attr('alt').replace('@', '');
-//var socket;
+var socket;
 var server = 'https://achievibit.herokuapp.com/';
 if (currentLoggedInUser) {
  	socket = io(server, { query: 'githubUsername=' + currentLoggedInUser });

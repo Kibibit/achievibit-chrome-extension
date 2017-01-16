@@ -2,14 +2,14 @@
   "manifest_version": 2,
 
   "name": "achievibit",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "get achievements while coding on GitHub",
   "icons": { "128": "icon_128.png" },
   "permissions": [
     "https://achievibit.herokuapp.com/"
   ],
   "content_scripts": [{
-    "css": [/*"styles.css"*/],
+    "css": ["styles.css"],
     "js": ["jquery-3.1.1.min.js", "socket.io.min.js", "content.js"],
     "matches": ["https://github.com/*"]
   }]

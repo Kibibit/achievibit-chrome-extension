@@ -1,18 +1,439 @@
-body {
-  background: url('https://media.giphy.com/media/3o7WTDJQVuYwhhuLhC/giphy.gif') !important;
+.achievement-banner, .achievement-banner-big {
+  position: fixed;
+  bottom: 10px;
+  left: calc(50% - 37.5px);
+  width: 75px;
+  height: 75px;
+  border-radius: 37.5px;
+  background-color: transparent;
+  overflow: hidden;
+  font-size: 12px;
+}
+.achievement-banner.animated, .animated.achievement-banner-big {
+  -webkit-animation: mainAnimationFrames linear 7.5s;
+          animation: mainAnimationFrames linear 7.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /*when the spec is finished*/
+}
+.achievement-banner-big {
+  width: calc(75px * 6);
+  left: calc(50% - calc(75px * 6)/2);
+  background-color: #652D90;
+}
+.achievement-banner .achievement-loader, .achievement-banner-big .achievement-loader, .achievement-banner .achievement-trophy, .achievement-banner-big .achievement-trophy {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 37.5px;
+  background-color: #7333a3;
+  -webkit-animation: achievementLoaderAnimationFrames ease 9s;
+          animation: achievementLoaderAnimationFrames ease 9s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-transform: scaleX(0) scaleY(0);
+          transform: scaleX(0) scaleY(0);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /*when the spec is finished*/
+}
+.achievement-banner .achievement-loader:nth-of-type(1), .achievement-banner-big .achievement-loader:nth-of-type(1), .achievement-banner .achievement-trophy:nth-of-type(1), .achievement-banner-big .achievement-trophy:nth-of-type(1) {
+  background-color: #7333a3;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+.achievement-banner .achievement-loader:nth-of-type(2), .achievement-banner-big .achievement-loader:nth-of-type(2), .achievement-banner .achievement-trophy:nth-of-type(2), .achievement-banner-big .achievement-trophy:nth-of-type(2) {
+  background-color: #652D90;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+  -webkit-animation-duration: 9.5s;
+          animation-duration: 9.5s;
+}
+.achievement-banner .achievement-loader:nth-of-type(3), .achievement-banner-big .achievement-loader:nth-of-type(3), .achievement-banner .achievement-trophy:nth-of-type(3), .achievement-banner-big .achievement-trophy:nth-of-type(3) {
+  background-color: #57277d;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+}
+.achievement-banner .achievement-loader:nth-of-type(4), .achievement-banner-big .achievement-loader:nth-of-type(4), .achievement-banner .achievement-trophy:nth-of-type(4), .achievement-banner-big .achievement-trophy:nth-of-type(4) {
+  background-color: #652D90;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+  -webkit-animation-duration: 8.5s;
+          animation-duration: 8.5s;
+}
+.achievement-banner .achievement-loader:nth-of-type(5), .achievement-banner-big .achievement-loader:nth-of-type(5), .achievement-banner .achievement-trophy:nth-of-type(5), .achievement-banner-big .achievement-trophy:nth-of-type(5) {
+  background-color: #7333a3;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+.achievement-banner .achievement-trophy, .achievement-banner-big .achievement-trophy {
+  background-color: #7333a3;
+  -webkit-animation: xboxLogoAnimationFrames ease-out 7.5s;
+          animation: xboxLogoAnimationFrames ease-out 7.5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  color: #fff;
+  background-color: transparent !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.achievement-banner .achievement-trophy img, .achievement-banner-big .achievement-trophy img {
+  border-radius: 50%;
+  width: 70%;
+  height: 70%;
+}
+.achievement-banner .achievement-text, .achievement-banner-big .achievement-text {
+  font-size: 2em;
+  position: absolute;
+  min-width: calc(75px * 6);
+  width: calc(75px * 6)-75px;
+  left: 75px;
+  height: 75px;
+  top: 0;
+  left: 37.5px;
+  text-align: center;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #fff;
+}
+.achievement-banner .achievement-text .achievement-notification, .achievement-banner-big .achievement-text .achievement-notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  -webkit-animation: achievementTextAnimationFrames linear 2s;
+          animation: achievementTextAnimationFrames linear 2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  opacity: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.achievement-banner .achievement-text .achievement-name, .achievement-banner-big .achievement-text .achievement-name {
+  position: absolute;
+  height: 75px;
+  font-size: .8em;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-animation: achievementNameAnimationFrames linear 4s;
+          animation: achievementNameAnimationFrames linear 4s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  opacity: 0;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.achievement-banner .achievement-text .achievement-name .sub-title, .achievement-banner-big .achievement-text .achievement-name .sub-title {
+  font-size: 0.5em;
+}
+.achievement-banner .achievement-text .achievement-name img, .achievement-banner-big .achievement-text .achievement-name img {
+  width: 2em;
+  height: 2em;
+  border-radius: 20%;
 }
 
-#masthead,
-#primary {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-  background-color: #fff;
-  padding: 20px !important;
+@-webkit-keyframes achievementLoaderAnimationFrames {
+  0% {
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
+  10% {
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  90% {
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
 }
-#masthead {
-  background: none;
+
+@keyframes achievementLoaderAnimationFrames {
+  0% {
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
+  10% {
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  90% {
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
 }
-#masthead img, #primary img {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
+@-webkit-keyframes xboxLogoAnimationFrames {
+  0% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
+  5% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1.2) scaleY(1.2);
+            transform: scaleX(1.2) scaleY(1.2);
+  }
+  10% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  90% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  95% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1.2) scaleY(1.2);
+            transform: scaleX(1.2) scaleY(1.2);
+  }
+  100% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
+}
+@keyframes xboxLogoAnimationFrames {
+  0% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
+  5% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1.2) scaleY(1.2);
+            transform: scaleX(1.2) scaleY(1.2);
+  }
+  10% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  90% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1) scaleY(1);
+            transform: scaleX(1) scaleY(1);
+  }
+  95% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(1.2) scaleY(1.2);
+            transform: scaleX(1.2) scaleY(1.2);
+  }
+  100% {
+    background-color: transparent !important;
+    -webkit-transform: scaleX(0) scaleY(0);
+            transform: scaleX(0) scaleY(0);
+  }
+}
+@-webkit-keyframes achievementTextAnimationFrames {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  55% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+  }
+}
+@keyframes achievementTextAnimationFrames {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  55% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+  }
+}
+@-webkit-keyframes achievementNameAnimationFrames {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30%);
+            transform: translateY(30%);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes achievementNameAnimationFrames {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30%);
+            transform: translateY(30%);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes mainAnimationFrames {
+  10% {
+    background-color: #652D90;
+  }
+  15% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+  }
+  20% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+  }
+  30% {
+    width: calc(75px * 6);
+    left: calc(50% - calc(75px * 6)/2);
+  }
+  80% {
+    width: calc(75px * 6);
+    left: calc(50% - calc(75px * 6)/2);
+  }
+  90% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+    background-color: #652D90;
+  }
+  95% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+    background-color: transparent;
+  }
+}
+@keyframes mainAnimationFrames {
+  10% {
+    background-color: #652D90;
+  }
+  15% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+  }
+  20% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+  }
+  30% {
+    width: calc(75px * 6);
+    left: calc(50% - calc(75px * 6)/2);
+  }
+  80% {
+    width: calc(75px * 6);
+    left: calc(50% - calc(75px * 6)/2);
+  }
+  90% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+    background-color: #652D90;
+  }
+  95% {
+    width: 75px;
+    height: 75px;
+    left: calc(50% - 37.5px);
+    background-color: transparent;
+  }
 }
