@@ -1,13 +1,36 @@
 var currentLoggedInUser = $('#user-links img.avatar').attr('alt').replace('@', '');
 //var socket;
 var server = 'https://achievibit.herokuapp.com/';
-// if (currentLoggedInUser) {
-// 	socket = io(server);
+if (currentLoggedInUser) {
+ 	socket = io(server, { query: 'githubUsername=' + currentLoggedInUser });
 
-// 	socket.on(currentLoggedInUser, function(achievement) {
-// 		console.log('got new achievement!!!', achievement);
-// 	});
-// }
+ 	socket.on(currentLoggedInUser, function(achievement) {
+		console.log('got new achievement!!!', achievement);
+		$('body').append([
+			'<div class="achievibit-container">',
+    			'<div class="achievement-banner animated">',
+	        		'<div class="achievement-loader"></div>',
+	        		'<div class="achievement-loader"></div>',
+	        		'<div class="achievement-loader"></div>',
+	        		'<div class="achievement-loader"></div>',
+	        		'<div class="achievement-loader"></div>',
+	        		'<div class="achievement-trophy" style="overflow: hidden;">',
+	        			'<img src="', server, '/images/unlocked.png', '">',
+	        		'</div>',
+	        		'<div class="achievement-text">',
+	            		'<div class="achievement-notification"><span>Achievement Unlocked</span></div>',
+	            		'<div class="achievement-name">',
+	            			'<img src="', achievement.avatar, '">',
+	            			'<span>', achievement.name, '</span>',
+	            		'</div>',
+	        		'</div>',
+    			'</div>',
+			'</div>'
+		].join(''));
+
+		setTimeout( function() { $('.achievibit-container').remove() }, 10000 );
+	});
+}
 
 var getUrlParams = window.location.href.replace(window.location.origin + '/', '');
 
