@@ -1,3 +1,4 @@
+$('body').append('<div class="achievibit-container"><div class="tits"></div></div>');
 var currentLoggedInUser = $('#user-links img.avatar').attr('alt').replace('@', '');
 var socket;
 var server = 'https://achievibit.herokuapp.com/';
@@ -5,10 +6,10 @@ if (currentLoggedInUser) {
  	socket = io(server, { query: 'githubUsername=' + currentLoggedInUser });
 
  	socket.on(currentLoggedInUser, function(achievement) {
+    var id = guid();
 		console.log('got new achievement!!!', achievement);
-		$('body').append([
-			'<div class="achievibit-container">',
-    			'<div class="achievement-banner animated">',
+		$('.achievibit-container').append([
+    			'<div class="achievement-banner animated" id="', id, '">',
 	        		'<div class="achievement-loader"></div>',
 	        		'<div class="achievement-loader"></div>',
 	        		'<div class="achievement-loader"></div>',
@@ -24,11 +25,22 @@ if (currentLoggedInUser) {
 	            			'<span>', achievement.name, '</span>',
 	            		'</div>',
 	        		'</div>',
-    			'</div>',
-			'</div>'
+    			'</div>'
 		].join(''));
 
-		setTimeout( function() { $('.achievibit-container').remove() }, 10000 );
+		setTimeout( function() {
+      $('.achievibit-container #' + id).remove()
+    }, 8.2 * 1000 );
+
+    function guid() {
+      function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+      }
+      return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+    }
 	});
 }
 

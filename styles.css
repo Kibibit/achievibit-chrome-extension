@@ -1,13 +1,26 @@
-.achievement-banner, .achievement-banner-big {
+.achievibit-container {
   position: fixed;
-  bottom: 10px;
-  left: calc(50% - 37.5px);
+  bottom: 0;
+
+  width: 100vw;
+
+  left: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.achievement-banner, .achievement-banner-big {
+
+  position: relative;
+  display: block;
   width: 75px;
   height: 75px;
   border-radius: 37.5px;
   background-color: transparent;
   overflow: hidden;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 .achievement-banner.animated, .animated.achievement-banner-big {
   -webkit-animation: mainAnimationFrames linear 7.5s;
@@ -24,7 +37,6 @@
 }
 .achievement-banner-big {
   width: calc(75px * 6);
-  left: calc(50% - calc(75px * 6)/2);
   background-color: #652D90;
 }
 .achievement-banner .achievement-loader, .achievement-banner-big .achievement-loader, .achievement-banner .achievement-trophy, .achievement-banner-big .achievement-trophy {
@@ -374,31 +386,25 @@
   15% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
   }
   20% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
   }
   30% {
     width: calc(75px * 6);
-    left: calc(50% - calc(75px * 6)/2);
   }
   80% {
     width: calc(75px * 6);
-    left: calc(50% - calc(75px * 6)/2);
   }
   90% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
     background-color: #652D90;
   }
   95% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
     background-color: transparent;
   }
 }
@@ -409,31 +415,25 @@
   15% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
   }
   20% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
   }
   30% {
     width: calc(75px * 6);
-    left: calc(50% - calc(75px * 6)/2);
   }
   80% {
     width: calc(75px * 6);
-    left: calc(50% - calc(75px * 6)/2);
   }
   90% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
     background-color: #652D90;
   }
   95% {
     width: 75px;
     height: 75px;
-    left: calc(50% - 37.5px);
     background-color: transparent;
   }
 }
