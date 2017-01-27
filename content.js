@@ -21,7 +21,7 @@ if (currentLoggedInUser) {
 	        		'<div class="achievement-text">',
 	            		'<div class="achievement-notification"><span>Achievement Unlocked</span></div>',
 	            		'<div class="achievement-name">',
-	            			'<img src="', achievement.avatar, '">',
+	            			'<img src="', server, achievement.avatar, '">',
 	            			'<span>', achievement.name, '</span>',
 	            		'</div>',
 	        		'</div>',
