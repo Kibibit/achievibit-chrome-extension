@@ -1,5 +1,7 @@
 $('body').append('<div class="achievibit-container"><div class="tits"></div></div>');
-var currentLoggedInUser = $('#user-links img.avatar').attr('alt').replace('@', '');
+var currentLoggedInUser = $('#user-links img.avatar').attr('alt');
+currentLoggedInUser = currentLoggedInUser && currentLoggedInUser.replace ?
+  currentLoggedInUser.replace('@', '') : currentLoggedInUser;
 var socket;
 var server = 'https://achievibit.herokuapp.com/';
 if (currentLoggedInUser) {
