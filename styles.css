@@ -1,5 +1,6 @@
-.achievibit a {
+.achievibit a.avatar-group-item {
   width: 100%;
+  display: block;
 }
 
 .achievibit-container {
