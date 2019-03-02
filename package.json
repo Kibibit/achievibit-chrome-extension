@@ -1,0 +1,24 @@
+{
+  "name": "achievibit-chrome-extension",
+  "version": "1.1.11",
+  "description": "chrome extension to integrate achievibit inside GitHub",
+  "main": "content.js",
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kibibit/achievibit-chrome-extension.git"
+  },
+  "author": "neilkalman@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kibibit/achievibit-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/Kibibit/achievibit-chrome-extension#readme",
+  "devDependencies": {
+    "all-contributors-cli": "^6.1.2"
+  }
+}
