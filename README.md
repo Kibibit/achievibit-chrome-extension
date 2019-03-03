@@ -11,7 +11,7 @@
   <a href="https://achievibit.kibibit.io"><img src="https://achievibit.kibibit.io/achievementsShield"></a>
   <a href="https://greenkeeper.io/"><img src="https://img.shields.io/badge/greenkeeper-enabled-brightgreen.svg"></a>
   <a href="#contributors"><img src="https://img.shields.io/badge/all_contributors-4-orange.svg"></a>
-  <a href="https://salt.bountysource.com/teams/kibibit"><img src="https://img.shields.io/endpoint.svg?url=https://monthly-salt.now.sh&style=flat-square"></a>
+  <a href="https://salt.bountysource.com/teams/kibibit"><img src="https://img.shields.io/endpoint.svg?url=https://monthly-salt.now.sh/kibibit&style=flat-square"></a>
 </p>
 <p align="center">
   chrome extension to integrate achievibit inside GitHub
